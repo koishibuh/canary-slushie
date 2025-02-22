@@ -60,11 +60,11 @@ jobs:
           username: ${{secrets.DEPLOY_USER}}
           key: ${{secrets.DEPLOY_SSH_KEY}}
           script: |
-            rm -rf canaryslushie
+            rm -rf canary-slushie
             gh auth login --with-token ${{secrets.GITHUB_TOKEN}}
-            gh repo clone koishibuh/canaryslushie
+            gh repo clone koishibuh/canary-slushie
             echo "${{ secrets.GITHUB_TOKEN }}" | docker login --username ${{ github.actor }} --password-stdin ghcr.io
-            cd canaryslushie
+            cd canary-slushie
             cp docker-compose.yml /etc/docker-env && cd /etc/docker-env
             docker compose down
             docker compose pull
