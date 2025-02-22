@@ -1,0 +1,9 @@
+﻿services:
+  canaryslushie-web:
+    container_name: "canaryslushie-web"
+    restart: unless-stopped
+    image: ghcr.io/koishibuh/canaryslushie-web:1.0.0
+    #    env_file:
+    #      - /etc/docker-env/.canaryslushie-web-env
+    ports:
+      - 8645:8080
