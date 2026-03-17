@@ -12,7 +12,7 @@ const petFound = ref(true);
 
 function cleanImageUrl(petImageUrl: string): string {
   return petImageUrl
-    .replace('https://static.chickensmoothie.com/', '')
+    .replace('https://pic.chickencdn.com/', '')
     .replace('pic.php?k=', '')
     .replace('archive/image.php?k=', '')
     .replace(/&.*/g, "$'");
